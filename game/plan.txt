@@ -1,0 +1,29 @@
+# how to create battle ship game
+
+Welcoming
+1) Welcome in the game
+2) Show keywords what the user can do
+-rules - to see the rules
+-exit - to quit game
+-start
+
+Preparing ships
+User1
+3) Ask for user1 name
+4) Print ships available for user1
+5) Print the board
+6) Ask the user to choose where to put the ships
+7) print the ships on the board
+8) clear the screen
+
+User2
+3) Ask for user2 name
+4) Print ships available for user2
+5) Print the board
+6) Ask the user to choose where to put the ships
+7) print the ships on the board
+8) clear the screen
+
+Battle
+User1
+1) Shoot

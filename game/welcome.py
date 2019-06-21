@@ -1,3 +1,5 @@
-print('Hello user!')
-print('something new')
-print('added a new print statement')
+def greet_user(name):
+    print("Welcome in BatteShip game, " + name)
+
+
+greet_user("Kate")

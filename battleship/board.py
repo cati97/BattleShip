@@ -27,21 +27,24 @@ class Board:
         "G": 14
     }
 
-    def print_board_with_ship(self, letter, number, ship, h_v):  # A 1
+    def get_new_board(self):
+        new_board = [row[:]for row in self.board]
+        return new_board
+
+    def return_board_with_ship(self, letter, number, ship, h_v, players_board):  # A 1
         num = int(number)
         letter_as_num = self.letters.get(letter)
         if h_v == "h":
             for i in range(ship):
-                self.board[num][letter_as_num] = '*'
+                players_board[num][letter_as_num] = '*'
                 letter_as_num += 2
-            self.print_joined_board(self.board)
+            return players_board
 
         if h_v == "v":
             for i in range(ship):
-                self.board[num][self.letters.get(letter)] = '*'
+                players_board[num][self.letters.get(letter)] = '*'
                 num += 1
-            self.print_joined_board(self.board)
-
+            return players_board
 
     def print_joined_row(self, row):
         row_joined = ""
@@ -50,19 +53,41 @@ class Board:
         print(row_joined)
 
     def print_joined_board(self, b):
-        print(self.beginning)
-        for i in range(len(b)):
-            self.print_joined_row(b[i])
-            if i < (len(b) - 1):
-                print(self.between)
-        print(self.ending)
+        if isinstance(b, list):  # if object is a list
+            print(self.beginning)
+            for i in range(len(b)):
+                self.print_joined_row(b[i])
+                if i < (len(b) - 1):
+                    print(self.between)
+            print(self.ending)
 
-    def print_empty_board(self):
-        for row in self.board:
-            for element in row:
-                if row == self.board[0]:
-                    continue
-                else:
-                    if row.index(element) % 2 == 0 and row.index(element) != 0:
-                        self.board[self.board.index(row)][row.index(element)] = " "
-        self.print_joined_board(self.board)
+    def print_empty_board(self, board):
+        if isinstance(board, list):
+            for row in board:
+                for element in row:
+                    if row == board[0]:
+                        continue
+                    else:
+                        if row.index(element) % 2 == 0 and row.index(element) != 0:
+                            board[board.index(row)][row.index(element)] = " "
+            self.print_joined_board(board)
+
+    def check_for_star(self, board, letter, number):
+        if isinstance(board, list):
+            num = int(number)
+            letter_as_num = self.letters.get(letter)
+            if board[num][letter_as_num] == "*":
+                return True
+            else:
+                return False
+
+    def place_hit_miss(self, letter, number, real_board, shooting_board):
+        if isinstance(real_board, list) and isinstance(shooting_board, list):
+            num = int(number)
+            letter_as_num = self.letters.get(letter)
+            if real_board[num][letter_as_num] == "*":
+                shooting_board[num][letter_as_num] = "X"
+                return shooting_board
+            elif real_board[num][letter_as_num] == " ":
+                shooting_board[num][letter_as_num] = "~"
+                return shooting_board

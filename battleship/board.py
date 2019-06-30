@@ -31,19 +31,19 @@ class Board:
         new_board = [row[:]for row in self.board]
         return new_board
 
-    def return_board_with_ship(self, letter, number, ship, h_v, players_board):  # A 1
-        num = int(number)
+    def return_board_with_ship(self, letter, number, ship, direction, players_board):  # A 1
+        letter = letter.upper()
         letter_as_num = self.letters.get(letter)
-        if h_v == "h":
+        if direction == "h":
             for i in range(ship):
-                players_board[num][letter_as_num] = '*'
+                players_board[number][letter_as_num] = '*'
                 letter_as_num += 2
             return players_board
 
-        if h_v == "v":
+        if direction == "v":
             for i in range(ship):
-                players_board[num][self.letters.get(letter)] = '*'
-                num += 1
+                players_board[number][self.letters.get(letter)] = '*'
+                number += 1
             return players_board
 
     def print_joined_row(self, row):
@@ -72,22 +72,49 @@ class Board:
                             board[board.index(row)][row.index(element)] = " "
             self.print_joined_board(board)
 
-    def check_for_star(self, board, letter, number):
+    def check_for_star_at_coordinates(self, board, letter, number):
+        letter = letter.upper()
         if isinstance(board, list):
-            num = int(number)
             letter_as_num = self.letters.get(letter)
-            if board[num][letter_as_num] == "*":
+            if board[number][letter_as_num] == "*":
                 return True
             else:
                 return False
 
-    def place_hit_miss(self, letter, number, real_board, shooting_board):
+
+    def place_hit_miss_on_enemy(self, letter, number, real_board, shooting_board):
+        letter = letter.upper()
         if isinstance(real_board, list) and isinstance(shooting_board, list):
-            num = int(number)
             letter_as_num = self.letters.get(letter)
-            if real_board[num][letter_as_num] == "*":
-                shooting_board[num][letter_as_num] = "X"
+            if real_board[number][letter_as_num] == "*":
+                shooting_board[number][letter_as_num] = "X"
                 return shooting_board
-            elif real_board[num][letter_as_num] == " ":
-                shooting_board[num][letter_as_num] = "~"
+            elif real_board[number][letter_as_num] == " ":
+                shooting_board[number][letter_as_num] = "~"
                 return shooting_board
+
+    def place_hit_miss_on_yourself(self, letter, number, real_board, shooting_board):
+        letter = letter.upper()
+        if isinstance(real_board, list) and isinstance(shooting_board, list):
+            letter_as_num = self.letters.get(letter)
+            if shooting_board[number][letter_as_num] == "X":
+                real_board[number][letter_as_num] = "X"
+                return real_board
+            elif shooting_board[number][letter_as_num] == "~":
+                real_board[number][letter_as_num] = "~"
+                return real_board
+
+    def count_stars_total(self, ships):
+        stars = 0
+        if isinstance(ships, list):
+            for element in ships:
+                stars += int(element)
+        return stars
+
+    def update_remaining_stars(self, board, count):
+        if isinstance(board, list):
+            for row in board:
+                for element in row:
+                    if element == "*":
+                        count += 1
+        return count

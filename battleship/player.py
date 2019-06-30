@@ -7,6 +7,7 @@ class Player:
         self.b_obj = Board()
         self.player_board = self.b_obj.get_new_board()
         self.shooting_board = self.b_obj.get_new_board()
+        self.stars_remaining = 50
 
     def get_name(self):  # getter
         return self.name

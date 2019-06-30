@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a37b4f0f-9cab-4dc6-ab8e-81614d0103a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/battleship/player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/battleship/useful.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/battleship/board.py" beforeDir="false" afterPath="$PROJECT_DIR$/battleship/board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/battleship/print_information.py" beforeDir="false" afterPath="$PROJECT_DIR$/battleship/print_information.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game1.py" beforeDir="false" afterPath="$PROJECT_DIR$/game1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/battleship/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/battleship/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/battleship/useful.py" beforeDir="false" afterPath="$PROJECT_DIR$/battleship/useful.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game1.py" beforeDir="false" afterPath="$PROJECT_DIR$/battle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,10 +17,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/game1.py">
+        <entry file="file://$PROJECT_DIR$/battle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="89" column="47" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+            <state relative-caret-position="570">
+              <caret line="123" column="38" lean-forward="true" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
               <folding>
                 <element signature="e#1#69#0" expanded="true" />
               </folding>
@@ -30,28 +29,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/battleship/player.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/battleship/print_information.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="707">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/battleship/board.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="92" column="37" lean-forward="true" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
+            <state relative-caret-position="434">
+              <caret line="106" column="39" lean-forward="true" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/battleship/player.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/battleship/useful.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1116">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
             </state>
           </provider>
         </entry>
@@ -81,11 +80,12 @@
         <option value="$PROJECT_DIR$/battleship/main_battle.py" />
         <option value="$PROJECT_DIR$/battleship/game1.py" />
         <option value="$PROJECT_DIR$/battleship/list_copy.py" />
-        <option value="$PROJECT_DIR$/battleship/useful.py" />
         <option value="$PROJECT_DIR$/battleship/print_information.py" />
-        <option value="$PROJECT_DIR$/battleship/player.py" />
-        <option value="$PROJECT_DIR$/battleship/board.py" />
         <option value="$PROJECT_DIR$/game1.py" />
+        <option value="$PROJECT_DIR$/battleship/useful.py" />
+        <option value="$PROJECT_DIR$/battleship/board.py" />
+        <option value="$PROJECT_DIR$/battleship/player.py" />
+        <option value="$PROJECT_DIR$/battle.py" />
       </list>
     </option>
   </component>
@@ -144,7 +144,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.list_copy">
+  <component name="RunManager" selected="Python.battle">
+    <configuration name="battle" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BattleShip" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="TERM" value="xterm-color" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/battleship" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/battle.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BattleShip" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,28 +182,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game/game.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="game1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BattleShip" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="TERM" value="xterm-color" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/battleship" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -233,15 +233,15 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.game1" />
+      <item itemvalue="Python.battle" />
       <item itemvalue="Python.game" />
-      <item itemvalue="Python.welcome" />
       <item itemvalue="Python.list_copy" />
+      <item itemvalue="Python.welcome" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.list_copy" />
-        <item itemvalue="Python.game1" />
+        <item itemvalue="Python.battle" />
         <item itemvalue="Python.game" />
         <item itemvalue="Python.welcome" />
       </list>
@@ -307,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561485212471</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added shooting">
+      <created>1561811848168</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1561811848168</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -363,7 +370,8 @@
     <MESSAGE value="added board class" />
     <MESSAGE value="added print_information.py" />
     <MESSAGE value="moved game1.py to venv" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved game1.py to venv" />
+    <MESSAGE value="added shooting" />
+    <option name="LAST_COMMIT_MESSAGE" value="added shooting" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/battleship/plan.txt">
@@ -376,13 +384,6 @@
     <entry file="file://$PROJECT_DIR$/battleship/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/battleship/useful.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/battleship/list_copy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -392,29 +393,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/battleship/print_information.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
+        <state relative-caret-position="645">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/battleship/player.py">
+    <entry file="file://$PROJECT_DIR$/battleship/useful.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="1116">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/battleship/board.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="92" column="37" lean-forward="true" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
+        <state relative-caret-position="434">
+          <caret line="106" column="39" lean-forward="true" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game1.py">
+    <entry file="file://$PROJECT_DIR$/battleship/player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="89" column="47" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+        <state relative-caret-position="120">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/battle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="123" column="38" lean-forward="true" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
           <folding>
             <element signature="e#1#69#0" expanded="true" />
           </folding>
